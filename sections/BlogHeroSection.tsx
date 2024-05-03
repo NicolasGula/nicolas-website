@@ -41,7 +41,7 @@ const BlogHeroSection: React.FC = () => {
       <div className="mt-10">
         <div className="overflow-hidden py-1">
           <h1 className="main-header text-4xl lg:text-5xl font-bold">
-            Sat Naing's{" "}
+            Nicolas Bonzini's{" "}
             <span className="text-marrsgreen dark:text-carrigreen">Blog</span>
           </h1>
         </div>

@@ -8,7 +8,7 @@ tags:
   - ContextAPI
   - Styled-Components
   - TypeScript
-author: Sat Naing
+author: Nicolas Bonzini
 type: article
 coverImage: https://res.cloudinary.com/noezectz/image/upload/v1654754125/SatNaing/terminal-screenshot_gu3kkc.png
 coverImageAlt: Screenshot of Terminal Portfolio Website
@@ -21,7 +21,7 @@ excerpt:
   Includes features like autocomplete, multiple themes, command hints etc.
 slug: how-do-i-develop-my-terminal-portfolio-website-with-react
 featured: true
-category: How Do I
+category: Write Up
 ---
 
 Developing a terminal-like website using ReactJS, TypeScript and Styled-Components. Includes features like autocomplete, multiple themes, command hints etc.
