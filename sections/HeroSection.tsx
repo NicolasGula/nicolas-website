@@ -5,8 +5,8 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import LinkButton from "../components/LinkButton";
 
-import satNaing from "../public/satnaing-illustration.webp";
-import laptop from "../public/laptop-illustration.webp";
+import laptop from "../public/image1.webp";
+import lala from "../public/image1.webp";
 
 const HeroSection: React.FC = () => {
   const sectionRef = useRef(null);
@@ -97,7 +97,7 @@ const HeroSection: React.FC = () => {
         <div className="relative w-72 md:w-80 h-80 flex items-center mx-auto">
           <div className="absolute pointer-events-none scale-90 xs:scale-95 mx-auto">
             <Image
-              src={satNaing}
+              src={laptop}
               width={1177}
               height={1374}
               priority
@@ -106,7 +106,7 @@ const HeroSection: React.FC = () => {
               alt="Sat Naing character illustration"
             />
           </div>
-          <div className="laptop absolute top-14 sm:top-16 left-0 scale-[.41] xs:scale-[.45] pointer-events-none">
+          {/* <div className="laptop absolute top-14 sm:top-16 left-0 scale-[.41] xs:scale-[.45] pointer-events-none">
             <Image
               src={laptop}
               width={559}
@@ -114,7 +114,7 @@ const HeroSection: React.FC = () => {
               aria-hidden="true"
               alt="Laptop illustration"
             />
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -124,19 +124,17 @@ const HeroSection: React.FC = () => {
         </span>
         <div className="overflow-hidden">
           <h1 className="text-animation text-4xl md:text-5xl lg:text-7xl md:my-2 font-semibold my-1">
-            Nicolas Bonzini
+            Nicolas Gula
           </h1>
         </div>
         <div className="overflow-hidden">
           <span className="text-animation text-2xl md:text-3xl lg:text-5xl block md:my-3 text-marrsgreen dark:text-carrigreen font-medium">
-            A Ethical Hacker
+            A Penetration Tester
           </span>
         </div>
         <div className="mt-2 my-4 md:mb-8">
           <p className="mb-1">
-          I am a web application Ethical Hacker,
-          </p>
-          <p>
+          I am a penetration tester,
           I hold certifications like eWPT and eJPT and am actively engaged in platforms 
           like Hack The Box to stay current with the latest security challenges. 
           My focus is staying ahead of emerging threats ensures effective protection of 

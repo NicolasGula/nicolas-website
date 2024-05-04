@@ -9,7 +9,7 @@ import { useSection } from "context/section";
 import useOnScreen from "hooks/useOnScreen";
 import useScrollActive from "hooks/useScrollActive";
 
-import satNaing from "../public/satnaing.webp";
+import nicolasGu from "../public/nicolasgula.jpg";
 import AboutBgSvg from "@/components/AboutBgSvg";
 import EduGroup from "@/components/EduGroup";
 
@@ -135,7 +135,7 @@ const AboutSection: React.FC = () => {
 
                 <div className="profile-picture overflow-hidden md:overflow-visible rounded-md md:shadow-2xl">
                   <Image
-                    src={satNaing}
+                    src={nicolasGu}
                     width={1700}
                     height={1790}
                     priority
@@ -169,11 +169,7 @@ const AboutSection: React.FC = () => {
             </div>
 
             <p className="col-start-1 col-end-3 row-start-4 row-end-6 lg:row-start-1 lg:row-end-2 lg:col-start-3 lg:col-end-6 lg:ml-8 lg:mt-auto about-intro">
-              With 3 years of comprehensive experience in web application
-              development, I have honed my skills in both frontend and backend
-              development. In addition to my hands-on experience in web
-              development, my education has also played a critical role in
-              providing a strong foundation for my career.
+            With two years of immersive experience in penetration testing, I've cultivated a robust skill set encompassing both offensive and defensive security techniques. 
             </p>
 
             <div
@@ -197,11 +193,9 @@ const AboutSection: React.FC = () => {
 const educationInfo = [
   {
     id: 1,
-    title: "CC of ISC2 (Certified Cybersecurity)",
-    subTitle: "June 2023",
-    list: [
-      "Designed to kickstart newcomers' careers in cybersecurity.",
-      "It validates understanding of fundamental security principles.",
+    title: "eWPT (Web Penetration Tester)",
+    subTitle: "January 2024",
+    list: ["The exam is a skills-based test that requires candidates to perform a real-world web app pentesting simulation.","Information Gathering & Reconnaissance","Web Application Vulnerability Assessment","Manual exploitation"
     ],
   },
   {
@@ -209,16 +203,19 @@ const educationInfo = [
     title: "eJPT (Junior Penetration Tester)",
     subTitle: "September 2023",
     list: [
-      "Studied modules specializing in software development",
-      "Passed HND with overall Merit",
+      "Designed to test you on every phase of the penetration life cycle.", "Assessment methodologies", "Host and network auditing", "Host and network penetration testing", 'Web application penetration testing',
     ],
   },
   {
     id: 3,
-    title: "eWPT (Web Penetration Tester)",
-    subTitle: "January 2023",
-    list: ["Got overall band score 6.5."],
+    title: "CC of ISC2 (Certified Cybersecurity)",
+    subTitle: "June 2023",
+    list: [
+      "Designed to kickstart newcomers' careers in cybersecurity.",
+      "It validates understanding of fundamental security principles.",
+    ],
   },
+  
 ];
 
 export default AboutSection;
