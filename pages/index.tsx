@@ -21,7 +21,7 @@ type Props = {
 
 export const meta = {
   description:
-    "Sat Naing is a full-stack developer based in Yangon, Myanmar. He is passionate about writing codes and developing web applications to solve real-life challenges.",
+    "Im a Penetration Tester from Montevideo, Uruguay. I'm passionate about writing posts about anything relationship about Hacking.",
   author: "Nicolas Gula",
   type: "website",
   ogImage: `${process.env.NEXT_PUBLIC_URL}/satnaing-dev-og-new.png`,

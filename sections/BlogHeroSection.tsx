@@ -50,7 +50,7 @@ const BlogHeroSection: React.FC = () => {
             Hello, everyone! Welcome to my personal blog.
           </p>
           <p className="intro-2">
-            In this blog, I will be writing about my projects (what I do/how I
+            In this blog, I will be writing about hacking (what I do/how I
             did), my personal experiences, and some random stuffs.
           </p>
           <p className="intro-3">
@@ -130,7 +130,7 @@ const BlogHeroSection: React.FC = () => {
         >
           <option value="All">All</option>
           <option value="English">English</option>
-          <option value="Myanmar">Myanmar</option>
+          <option value="Spanish">Spanish</option>
         </select>
       </div>
     </section>

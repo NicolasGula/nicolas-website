@@ -95,11 +95,11 @@ fields:
   description: Tags for the post
 - name: author
   type: select
-  default: Sat Naing
+  default: Nicolas Gula
   config:
     required: true
     options:
-    - Sat Naing
+    - Nicolas Gula
     source:
       type: simple
       section: 

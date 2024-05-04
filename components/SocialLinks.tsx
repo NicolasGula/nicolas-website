@@ -56,8 +56,8 @@ const SocialLinks: React.FC<{ page?: string }> = ({ page }) => {
 const socialLinks = [
   {
     id: 1,
-    title: "Sat Naing's Github Profile",
-    link: "https://github.com/satnaing",
+    title: "Nicolas Gula's Github Profile",
+    link: "https://github.com/NicolasGula",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -75,8 +75,8 @@ const socialLinks = [
   },
   {
     id: 2,
-    title: "Sat Naing's LinkedIn Profile",
-    link: "https://www.linkedin.com/in/satnaing/",
+    title: "Nicolas Gula's LinkedIn Profile",
+    link: "https://www.linkedin.com/in/nicolasgula/",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -91,8 +91,8 @@ const socialLinks = [
   },
   {
     id: 3,
-    title: "Check Sat Naing on Dev.to",
-    link: "https://dev.to/satnaing",
+    title: "Check Nicolas Gula on Dev.to",
+    link: "https://dev.to/nicolas_bonzini",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -106,17 +106,10 @@ const socialLinks = [
   },
   {
     id: 4,
-    title: "Sat Naing's Profile on Facebook",
-    link: "https://www.facebook.com/satnaing.dev",
+    title: "Nicolas Gula's Profile on Medium",
+    link: "https://medium.com/@nicolasgulab",
     svg: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        className="dark:fill-bglight hover:fill-marrsgreen dark:hover:fill-carrigreen"
-      >
-        <path d="M12.001 2.002c-5.522 0-9.999 4.477-9.999 9.999 0 4.99 3.656 9.126 8.437 9.879v-6.988h-2.54v-2.891h2.54V9.798c0-2.508 1.493-3.891 3.776-3.891 1.094 0 2.24.195 2.24.195v2.459h-1.264c-1.24 0-1.628.772-1.628 1.563v1.875h2.771l-.443 2.891h-2.328v6.988C18.344 21.129 22 16.992 22 12.001c0-5.522-4.477-9.999-9.999-9.999z" />
-      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="dark:fill-bglight hover:fill-marrsgreen dark:hover:fill-carrigreen"><g fill="none"><path d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M8 6a6 6 0 1 1 0 12A6 6 0 0 1 8 6m9 1c1.5 0 2.5 2.239 2.5 5s-1 5-2.5 5s-2.5-2.239-2.5-5s1-5 2.5-5m4 .5c.38 0 .712.827.88 2.246l.047.443l.019.235l.03.494l.01.259l.012.541L22 12l-.002.282l-.012.541l-.01.26l-.03.493l-.02.235l-.045.443c-.169 1.42-.5 2.246-.881 2.246c-.38 0-.712-.827-.88-2.246l-.047-.443a16.683 16.683 0 0 1-.019-.235l-.03-.494a20.863 20.863 0 0 1-.01-.259l-.012-.541v-.564l.012-.541l.01-.26l.03-.493l.02-.235l.045-.443c.169-1.42.5-2.246.881-2.246"/></g></svg>
     ),
   },
 ];

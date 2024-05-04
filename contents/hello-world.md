@@ -1,6 +1,6 @@
 ---
-title: Haru Fashion ecommerce ကိုဘယ်လိုရေးခဲ့လဲ
-description: Haru Fashion e-commerce application တစ်ခုကိုကျွန်တော် ဘယ်လိုရေးခဲ့သလဲ
+title: Primer post en mi web page
+description: Como montar un Active Directory (AD) casero
 excerpt:
   ကျွန်တော်ရေးခဲ့တဲ့ Haru Fashion ဆိုတဲ့ e-commerce အကြောင်း၊ အသုံးပြုခဲ့တဲ့
   technologies တွေရယ်၊ ရေးခဲ့စဥ်မှာကြုံခဲ့ရတဲ့ အတွေ့အကြုံတွေအကြောင်း
@@ -21,10 +21,10 @@ coverImageHeight: "700"
 ogImage: https://res.cloudinary.com/noezectz/image/upload/v1647688482/SatNaing/haru-fashion-og_qotvvg.png
 ogImageAlt: Haru Fashion
 type: article
-language: "Myanmar"
+language: "Spanish"
 ---
 
-ကျွန်တော် Haru Fashion ဆိုတဲ့ e-commerce application ကိုဘယ်လိုရေးခဲ့လဲဆိုတာကို ဒီ post မှာ ရေးသွားမှာဖြစ်ပါတယ်။
+Primer post en mi web page
 
 ## Tech Stack
 
