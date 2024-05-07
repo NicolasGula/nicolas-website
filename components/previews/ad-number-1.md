@@ -7,7 +7,7 @@ excerpt:
 datetime: 2024-05-04T03:42:51Z
 slug: how-i-made-haru
 featured: true
-category: How Do I
+category: What is ?
 tags:
   - Active Directory
   - Kerberos

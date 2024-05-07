@@ -139,7 +139,7 @@ const AboutSection: React.FC = () => {
                     width={1700}
                     height={1790}
                     priority
-                    alt="Sat Naing profile picture"
+                    alt="Nicolas Gula profile picture"
                     className="rounded-md"
                   />
                 </div>

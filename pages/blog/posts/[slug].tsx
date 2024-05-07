@@ -91,7 +91,7 @@ const BlogLayout: React.FC<Props> = ({ post }) => {
               <PostBody content={post.content} />
 
               {/* Facebook Share Button */}
-               <div
+               {/* <div
                 className="fb-share-button my-4"
                 data-href={postUrl}
                 data-layout="button"
@@ -100,11 +100,14 @@ const BlogLayout: React.FC<Props> = ({ post }) => {
                 <a
                   rel="noopener noreferrer"
                   target="_blank"
-                  href={`https://www.linkedin.com/sharing/share-offsite/?url=${postUrl}`}
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+                    postUrl
+                  )}&amp;src=sdkpreparse`}
                   className="fb-xfbml-parse-ignore"
                 >
+                  Share
                 </a>
-              </div>
+              </div> */}
             </article>
           </main>
           <Footer />

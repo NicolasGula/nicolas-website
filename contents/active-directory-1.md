@@ -6,7 +6,7 @@ excerpt:
   Prepárate para descubrirlo
 datetime: 2024-05-06T05:35:07.000+00:00
 featured: true
-category: How Do I
+category: What is ?
 author: Nicolas Gula
 type: article
 coverImage:  https://jumpcloud.com/wp-content/uploads/2016/07/AD1.png
