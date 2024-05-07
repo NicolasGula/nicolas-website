@@ -16,7 +16,7 @@ module.exports = {
   reactStrictMode: true,
   trailingSlash: false,
   images: {
-    domains: ["res.cloudinary.com", "jumpcloud.com"]
+    domains: ["res.cloudinary.com", "jumpcloud.com","www.quest.com"]
   },
   compiler: {
     removeConsole: true,

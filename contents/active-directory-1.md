@@ -202,6 +202,96 @@ Una relación de confianza (Trusts) permite la autenticación entre dominios, fa
 
 ![Trusts](https://academy.hackthebox.com/storage/modules/74/trusts-diagram.png)
 
+# Protocolos de Active Directory 🗣️
+
+Active Directory en sistemas Windows usa LDAP, Kerberos, DNS y MSRPC para comunicarse. Estos protocolos son fundamentales para la autenticación y la comunicación en el entorno de Active Directory.
+
+### Kerberos
+
+Kerberos es el principal protocolo de autenticación en Windows desde 2000. Utiliza tickets para autenticar usuarios y servidores de manera segura sin transmitir contraseñas. Cuando un usuario inicia sesión, solicita un ticket al Centro de Distribución de Claves Kerberos (KDC). Si la solicitud es válida, el KDC emite un Ticket de Concesión de Boletos (TGT) al usuario. Luego, el usuario solicita un ticket de servicio para acceder a recursos específicos. Si todo es correcto, se concede acceso al usuario.
+
+La autenticación Kerberos protege las credenciales de los usuarios al no transmitir contraseñas en la red. El Centro de Distribución de Claves Kerberos (KDC) emite un Ticket de Concesión de Boletos (TGT) al usuario, que se usa para solicitar un Ticket de Servicio (TGS) para acceder a recursos específicos. El proceso se basa en la existencia de un TGT válido para autenticar al usuario. El KDC no registra transacciones anteriores.
+
+#### Proceso de autenticación Kerberos 
+
+1. La contraseña del usuario se convierte en un hash NTLM para cifrar el Ticket de Concesión de Boletos (TGT), protegiendo así las credenciales del usuario durante la transmisión.
+2. El servicio KDC verifica la solicitud de autenticación del usuario y emite un TGT, que es entregado al usuario.
+3. El usuario presenta el TGT al DC para solicitar un Ticket de Servicio (TGS) para un servicio específico.
+4. El TGS se cifra con el hash de contraseña NTLM del servicio y se entrega al usuario.
+5. El usuario presenta el TGS al servicio para acceder al recurso solicitado.
+
+![Kerberos Auth](https://www.manageengine.com/products/active-directory-audit/kb/images/event-4771-kerberos-authentication-illustration.jpg)
+
+El protocolo Kerberos utiliza el puerto 88 (tanto TCP como UDP). Al buscar controladores de dominio en un entorno de Active Directory, es común realizar escaneos de puertos en busca del puerto 88 abierto utilizando herramientas como [Nmap](https://nmap.org/).
+
+### DNS
+
+Active Directory utiliza DNS para permitir a los clientes encontrar controladores de dominio y para que estos se comuniquen entre sí. DNS resuelve nombres de host en direcciones IP y mantiene registros de servicios (SRV) que ayudan a los clientes a ubicar recursos en la red, como servidores de archivos o impresoras. El DNS dinámico actualiza automáticamente la base de datos DNS cuando cambia una dirección IP. Esto es crucial para garantizar que los clientes puedan encontrar y comunicarse con los recursos en la red. Al unirse a la red, un cliente localiza un controlador de dominio a través de consultas DNS, lo que le permite obtener la dirección IP del controlador de dominio. DNS utiliza los puertos TCP y UDP 53 para la comunicación en la red.
+
+### LDAP
+
+Active Directory utiliza LDAP para búsquedas de directorios y autenticación. LDAP es un protocolo de código abierto que permite la comunicación con servicios de directorio, como AD. LDAP opera en el puerto 389, mientras que LDAPS, una versión segura de LDAP, utiliza el puerto 636. LDAP es esencial para que los sistemas en la red se comuniquen con AD y accedan a la información de la cuenta de usuario y la seguridad, incluidas las contraseñas. Una sesión LDAP comienza conectándose a un servidor LDAP, como un controlador de dominio en AD.
+
+![LDAP](https://www.dnsstuff.com/wp-content/uploads/2020/04/what-is-LDAP-authentication-for-Active-Directory.png)
+
+La relación entre Active Directory (AD) y LDAP es similar a la de Apache y HTTP. AD es un servidor de directorio que utiliza el protocolo LDAP para la comunicación, al igual que Apache es un servidor web que utiliza HTTP. Aunque poco común, algunas organizaciones pueden no usar AD y optar por otros servidores LDAP como OpenLDAP.
+
+LDAP ofrece dos tipos de autenticación: Simple Authentication y SASL Authentication. 
+
+- **Simple Authentication:** Permite la autenticación mediante un nombre de usuario y una contraseña, creando una solicitud BIND para autenticarse en el servidor LDAP.
+
+- **SASL Authentication:** Utiliza un marco de seguridad como SASL, que a su vez puede utilizar servicios de autenticación externos como Kerberos. El servidor LDAP envía un mensaje al servicio de autorización, iniciando una serie de mensajes de desafío/respuesta para autenticar al usuario.
+
+Es importante tener en cuenta que los mensajes de autenticación LDAP se envían en texto plano por defecto, lo que puede representar un riesgo de seguridad. Se recomienda utilizar cifrado TLS u otro método similar para proteger esta información durante la transmisión.
+
+### MSRPC 
+
+MSRPC es la versión de Microsoft de RPC, una técnica de comunicación entre procesos. Se utiliza en sistemas Windows para acceder a Active Directory a través de cuatro interfaces RPC clave.
+
+#### Lsarpc
+LSARPC es un conjunto de llamadas RPC que administra la política de seguridad local en una computadora, controla la política de auditoría y proporciona servicios de autenticación interactivos. Se utiliza para gestionar las políticas de seguridad del dominio.
+
+#### Netlogon
+Netlogon es un proceso de Windows que autentica usuarios y otros servicios en el entorno del dominio. Se trata de un servicio que se ejecuta de forma continua en segundo plano.
+
+#### SAMR
+Remote SAM (samr) es un protocolo que administra la base de datos de cuentas de dominio en Windows. Permite a los administradores de TI crear, leer, actualizar y eliminar información sobre usuarios, grupos y computadoras. Sin embargo, los atacantes también pueden aprovechar este protocolo para realizar reconocimientos en el dominio interno y mapear la red AD con herramientas como BloodHound. Cambiar una clave de registro en Windows puede limitar el acceso remoto a consultas SAM, lo que ayuda a proteger contra este tipo de reconocimiento.
+
+#### drsuapi
+La API drsuapi de Microsoft implementa el protocolo remoto del Servicio de replicación de directorios (DRS) para la replicación entre controladores de dominio en entornos con varios DC. Sin embargo, los atacantes pueden aprovechar drsuapi para obtener copias del archivo de base de datos del dominio Active Directory (NTDS.dit), lo que les permite recuperar hashes de contraseñas de todas las cuentas del dominio. Estos hashes pueden ser utilizados en ataques de Pass-the-Hash para acceder a más sistemas o ser crackeados offline con herramientas como Hashcat para obtener las contraseñas sin cifrar.
+
+## Autenticacion NTLM 🔐
+Active Directory utiliza varios métodos de autenticación adicionales, como LM, NTLM, NTLMv1 y NTLMv2, además de Kerberos y LDAP. Estos métodos tienen diferentes niveles de seguridad y eficacia. Kerberos es generalmente preferido debido a su mayor seguridad. Es importante entender la diferencia entre estos métodos para garantizar una autenticación segura en AD.
+
+| Hash Protocolo | Técnica criptográfica           | Autenticación mutua     | Tipo de mensaje                     | Tercero de confianza                                          |
+|----------------|---------------------------------|-------------------------|-------------------------------------|---------------------------------------------------------------|
+| NTLM           | Criptografía de clave simétrica | No                      | Número aleatorio                    | Controlador de dominio                                        |
+| NTLMv1         | Criptografía de clave simétrica | No                      | hash MD4, número aleatorio          | Controlador de dominio                                        |
+| NTLMv2         | Criptografía de clave simétrica | No                      | hash MD4, número aleatorio          | Controlador de dominio                                        |
+| Kerberos       | Criptografía de clave simétrica | Sí                      | Boleto cifrado usando DES, MD5      | Controlador de dominio/Centro de distribución de claves (KDC) |
+
+### LM
+LM (LAN Manager) es un antiguo mecanismo de almacenamiento de contraseñas utilizado por Windows, debutando en 1987. Aunque desactivado por defecto desde Windows Vista/Server 2008 debido a sus debilidades de seguridad, todavía se encuentra en entornos antiguos. Las contraseñas de LM están limitadas a 14 caracteres y no distinguen entre mayúsculas y minúsculas, lo que facilita su descifrado.
+
+El hash LM divide una contraseña de 14 caracteres en dos partes de siete, las cifra con DES y las concatena. Esto facilita el descifrado ya que un atacante solo necesita forzar siete caracteres dos veces en lugar de los catorce completos. Si la contraseña tiene siete caracteres o menos, el segundo fragmento del hash LM es predecible. Puede prohibirse su uso mediante la Política de grupo.
+
+### NTHash (NTLM) 
+NT LAN Manager (NTLM) es un protocolo de autenticación utilizado en sistemas Windows modernos. Utiliza un enfoque de desafío-respuesta, donde el cliente y el servidor intercambian mensajes para verificar la identidad del cliente. NTLM utiliza dos tipos de hashes para almacenar contraseñas: el hash LM y el hash NT. El hash NT es el hash MD4 del valor UTF-16 little-endian de la contraseña. Este protocolo se utiliza para autenticar usuarios en entornos de dominio de Windows y los hashes se almacenan localmente en la base de datos SAM o en un controlador de dominio en el archivo NTDS.DIT.
+
+![NTLM](https://www.ionos.es/digitalguide/fileadmin/DigitalGuide/Schaubilder/servidor-con-autenticacion-ntlm.png)
+
+Aunque más robustos que los hashes LM, los hashes NTLM aún pueden ser vulnerables a ataques de fuerza bruta, especialmente en sistemas con hardware potente como las GPU. Los ataques a GPU pueden descifrar todo el espacio de claves de 8 caracteres NTLM en menos de 3 horas. Contraseñas más largas pueden ser más difíciles de descifrar, pero aún pueden ser vulnerables a ataques de diccionario combinados con reglas. Además, NTLM es vulnerable al ataque pass-the-hash, donde un atacante puede autenticarse en sistemas de destino utilizando solo el hash NTLM, sin necesidad de conocer la contraseña en texto claro.
+
+### NTLMv1 (Net-NTLMv1)
+
+El protocolo NTLM realiza un desafío/respuesta entre un servidor y un cliente utilizando el hash NT. NTLMv1 utiliza tanto el hash NT como el LM, lo que puede hacer que sea más fácil "descifrar" fuera de línea después de capturar un hash usando una herramienta como Responder o mediante un ataque de retransmisión NTLM (ambos están fuera del alcance de este módulo y serán cubierto en módulos posteriores sobre movimiento lateral). El protocolo se utiliza para la autenticación de red y el hash Net-NTLMv1 se crea a partir de un algoritmo de desafío/respuesta. El servidor envía al cliente un número aleatorio de 8 bytes (desafío) y el cliente devuelve una respuesta de 24 bytes. Estos hashes NO se pueden utilizar para ataques de paso de hash.
+
+### NTLMv2 (Net-NTLMv2)
+NTLMv2, introducido en Windows NT 4.0 SP4, es una mejora sobre NTLMv1 y ha sido el valor predeterminado en Windows desde Server 2000. Está diseñado para ser más resistente a ciertos ataques de suplantación de identidad que afectan a NTLMv1. NTLMv2 envía dos respuestas al desafío del servidor, cada una conteniendo un hash HMAC-MD5 de 16 bytes del desafío, un desafío generado aleatoriamente por el cliente y un hash HMAC-MD5 de las credenciales del usuario. Este protocolo ayuda a fortalecer la autenticación en entornos Windows.
+
+### Domain Cached Credentials (MSCache2)
+En entornos de Active Directory, el uso de Domain Cached Credentials (DCC) permite que los hosts accedan a recursos incluso cuando no pueden comunicarse con el Controlador de Dominio debido a problemas de red. Estos hashes, almacenados localmente en hosts después de una autenticación exitosa, son difíciles de descifrar y no pueden usarse en ataques de paso de hash. Aunque son valiosos para la disponibilidad de servicios, los intentos de descifrarlos suelen ser lentos y no siempre efectivos, lo que requiere un enfoque específico. Los probadores de penetración deben comprender estos hashes, sus limitaciones y cuándo pueden ser inútiles en un ataque.
+
 Ufff.... tuvo larga esta introduccion😮‍💨. Aun falta mas, asi que de momento lo dejo por aca y armo una segunda parte.
 
 ### Fuentes:
