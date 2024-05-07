@@ -50,7 +50,7 @@ const BlogLayout: React.FC<Props> = ({ post }) => {
       />
 
       <AppHead
-        title={`${post.title} - Sat Naing`}
+        title={`${post.title} - Nicolas Gula`}
         url={`${process.env.NEXT_PUBLIC_URL}/blog/posts/${post.slug}`}
         meta={post}
       />
@@ -90,19 +90,8 @@ const BlogLayout: React.FC<Props> = ({ post }) => {
               )}
               <PostBody content={post.content} />
 
-              {/* <hr /> */}
-
-              {/* Facebook Comment Plugin */}
-              {/* <div
-                className="fb-comments my-4"
-                data-colorscheme="dark"
-                data-href={postUrl}
-                data-width="100%"
-                data-numposts="5"
-              ></div> */}
-
               {/* Facebook Share Button */}
-              <div
+               <div
                 className="fb-share-button my-4"
                 data-href={postUrl}
                 data-layout="button"
@@ -119,6 +108,11 @@ const BlogLayout: React.FC<Props> = ({ post }) => {
                   Share
                 </a>
               </div>
+
+              <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: es_ES</script>
+              <script type="IN/Share" data-url="${encodeURIComponent(
+                    postUrl
+                  )}"></script>
             </article>
           </main>
           <Footer />
