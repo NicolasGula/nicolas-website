@@ -100,19 +100,11 @@ const BlogLayout: React.FC<Props> = ({ post }) => {
                 <a
                   rel="noopener noreferrer"
                   target="_blank"
-                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-                    postUrl
-                  )}&amp;src=sdkpreparse`}
+                  href={`https://www.linkedin.com/sharing/share-offsite/?url=${postUrl}`}
                   className="fb-xfbml-parse-ignore"
                 >
-                  Share
                 </a>
               </div>
-
-              <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: es_ES</script>
-              <script type="IN/Share" data-url="${encodeURIComponent(
-                    postUrl
-                  )}"></script>
             </article>
           </main>
           <Footer />
