@@ -1,5 +1,5 @@
 ---
-title: Inmersion Rapida En La eWPTv2
+title: Inmersion Rapida A La eWPTv2
 description: Inmersion Rapida En La eWPTv2
 excerpt:
   Quiero compartir mi experiencia metiendome en la seguridad de aplicaciones web a través de la certificación eWPTv2 (Web Application Penetration Tester).
@@ -32,6 +32,8 @@ language: "English"
 ## ¿Que es la eWPTv2?
 
 Según el [**INE**](https://security.ine.com/certifications/ewpt-certification/), los mismos de la certificación de hacking de nivel inicial eJPT , «eWPTv2 es una certificación práctica de nivel profesional para Red Teams que simula las habilidades utilizadas durante intervenciones en el mundo real». El examen dura 10 horas y consta de 50 preguntas. No es necesario presentar un informe; basta con responder a las preguntas. Esta certificación se sitúa en el nivel intermedio de la hoja de la [**Security Certification Roadmap**](https://pauljerimy.com/security-certification-roadmap/).
+
+![Certs](https://raw.githubusercontent.com/NicolasGula/NicolasGula/master/public/images/photos/seccerts.png)
 
 ## Temas
 

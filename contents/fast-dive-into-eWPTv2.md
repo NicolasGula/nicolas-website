@@ -35,6 +35,8 @@ Hello community! 👋 Today, i'm excited to share my experience diving into web 
 According to [**INE**](https://security.ine.com/certifications/ewpt-certification/), the same as eJPT entry level hacking certification ,"eWPTv2 is a hands-on, professional-level Red Team certification that simulates skills utilized during real-world engagements." 
 The exam lasts 10 hours, featuring 50 questions. You don't have to submit a report; just answer the questions. This certifiaction is at the intermediate level of the [**Security Certification Roadmap**](https://pauljerimy.com/security-certification-roadmap/)
 
+![Certs](https://raw.githubusercontent.com/NicolasGula/NicolasGula/master/public/images/photos/seccerts.png)
+
 ## Topics
 The topics covered include:
 * An introduction to Web Application Security testing, covering everything from the HTTP protocol to [OWASP Top Ten](https://owasp.org/Top10/) Ten and its [Open Web Security Testing Guide](https://github.com/OWASP/wstg/tree/master/checklists).
