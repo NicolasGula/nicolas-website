@@ -141,7 +141,7 @@ const HeroSection: React.FC = () => {
           digital assets and data integrity.
           </p>
         </div>
-        <LinkButton href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}>
+        <LinkButton href={`mailto:nicolasgula@outlook.com`}>
           Contact me!
         </LinkButton>
       </div>

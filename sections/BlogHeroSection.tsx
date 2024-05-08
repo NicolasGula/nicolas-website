@@ -54,9 +54,9 @@ const BlogHeroSection: React.FC = () => {
             did), my personal experiences, and some random stuffs.
           </p>
           <p className="intro-3">
-            You can follow me on my social media and{" "}
-            <a href="https://github.com/satnaing" className="link">
-              Github account.
+            You can follow me on{" "}
+            <a href="https://www.linkedin.com/in/nicolasgula/" className="link">
+              Linkedin.
             </a>
             <svg
               xmlns="http://www.w3.org/2000/svg"

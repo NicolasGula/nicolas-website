@@ -46,7 +46,7 @@ const socialLinks = [
   {
     id: 1,
     title: "Nicolas Gula's Github Profile",
-    link: "https://github.com/NicolasGula",
+    link: "https://github.com/",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"

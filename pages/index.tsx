@@ -33,7 +33,7 @@ const Home: NextPage<Props> = ({ blogPosts }) => {
   return (
     <>
       <AppHead
-        title="Nicolas Gula - A Ethical Hacker"
+        title="Nicolas Gula - Penetration Tester"
         url={`${process.env.NEXT_PUBLIC_URL}`}
         meta={meta}
       />

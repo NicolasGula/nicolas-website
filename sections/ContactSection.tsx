@@ -52,7 +52,7 @@ const ContactSection: React.FC = () => {
           I'm always willing to discuss my experience, learn from others, 
           or talk about anything.
         </p>
-        <LinkButton href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}>
+        <LinkButton href={`mailto:nicolasgula@outlook.com`}>
           Get in touch!
         </LinkButton>
       </div>
