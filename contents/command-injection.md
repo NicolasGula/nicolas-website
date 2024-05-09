@@ -166,6 +166,9 @@ I hope you find it useful.👨‍💻
 
 ## Resources
 
-[Portswigger](https://portswigger.net/web-security/os-command-injection)
-[HackTheBox](https://academy.hackthebox.com/module/details/109)
-[INE](https://ine.com/blog/command-injection)
+[Portswigger](https://portswigger.net/web-security/os-command-injection)  
+
+[HackTheBox](https://academy.hackthebox.com/module/details/109)  
+
+[INE](https://ine.com/blog/command-injection)  
+
