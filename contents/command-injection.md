@@ -3,7 +3,7 @@ title: OS Command Injection - Portswigger Labs
 description: OS Command Injection - Portswigger Labs
 excerpt:
   Command Injection, allows an attacker to execute operating system (OS) commands on the server that is running an application and typically fully compromise the application and its data.
-datetime: 2024-05-09T21:33:07.000+00:00
+datetime: 2024-05-09T19:33:07.000+00:00
 tags:
   - Command Injection
   - Portswigger
