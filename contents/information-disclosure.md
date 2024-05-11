@@ -18,7 +18,7 @@ coverImageWidth: "2725"
 coverImageHeight: "1400"
 ogImage: "/assets/blog/hello-world/cover.jpg"
 ogImageAlt: something
-language: "Spanish"
+language: "English"
 ---
 ----
 

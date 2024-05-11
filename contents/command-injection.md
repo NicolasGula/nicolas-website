@@ -12,13 +12,13 @@ featured: true
 category: Tutorial
 author: Nicolas Gula
 type: article
-coverImage:  https://cdn.acunetix.com/wp-content/uploads/2019/06/11110845/command-injection.png
+coverImage:  https://miro.medium.com/v2/resize:fit:640/format:webp/1*HapzmTCjNvXIff_AsOCIuw.png
 coverImageAlt: Microsoft AD
 coverImageWidth: "2725"
 coverImageHeight: "1400"
 ogImage: "/assets/blog/hello-world/cover.jpg"
 ogImageAlt: something
-language: "Spanish"
+language: "English"
 ---
 ----
 
