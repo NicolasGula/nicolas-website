@@ -22,22 +22,22 @@ type Props = {
 export const meta = {
   description:
     "Im a Penetration Tester from Montevideo, Uruguay. I'm passionate about writing posts about anything relationship about Hacking.",
-  author: "Nicolas Gula",
+  author: "nGbonzini",
   type: "website",
   ogImage: `${process.env.NEXT_PUBLIC_URL}/satnaing-dev-og-new.png`,
-  siteName: "Nicolas Gula",
-  imageAlt: "Nicolas Gula portfolio website",
+  siteName: "nGbonzini",
+  imageAlt: "nGbonzini portfolio website",
 };
 
 const Home: NextPage<Props> = ({ blogPosts }) => {
   return (
     <>
       <AppHead
-        title="Nicolas Gula - Penetration Tester"
+        title="nGbonzini - Penetration Tester"
         url={`${process.env.NEXT_PUBLIC_URL}`}
         meta={meta}
       />
-      <Loader>NicolasGula</Loader>
+      <Loader>nGbonzini</Loader>
       <div className="bg-bglight dark:bg-bgdark overflow-hidden">
         <div className="selection:bg-marrsgreen selection:text-bglight dark:selection:bg-carrigreen dark:selection:text-bgdark">
           <SkipToMain />

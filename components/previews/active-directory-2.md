@@ -6,7 +6,7 @@ excerpt:
 datetime: 2024-05-07T05:33:07.000+00:00
 featured: true
 category: What is ?
-author: Nicolas Gula
+author: nGbonzini
 type: article
 coverImage:  https://www.quest.com/images/og/learn-page-what-is-active-directory_163781.jpg
 coverImageAlt: Microsoft AD

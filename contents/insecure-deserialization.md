@@ -10,7 +10,7 @@ tags:
   - Labs
 featured: true
 category: Tutorial
-author: Nicolas Gula
+author: nGbonzini
 type: article
 coverImage:  https://raw.githubusercontent.com/NicolasGula/NicolasGula/master/public/images/photos/insecure-deserialization.png
 coverImageAlt: Microsoft AD

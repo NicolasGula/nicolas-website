@@ -11,7 +11,7 @@ const Home: NextPage = () => {
   return (
     <>
       <AppHead
-        title="Nicolas Gula - Penetration Tester"
+        title="nGbonzini - Penetration Tester"
         url={`${process.env.NEXT_PUBLIC_URL}`}
         meta={meta}
       />

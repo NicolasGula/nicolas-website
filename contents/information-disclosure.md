@@ -10,7 +10,7 @@ tags:
   - Labs
 featured: true
 category: Tutorial
-author: Nicolas Gula
+author: nGbonzini
 type: article
 coverImage:  https://raw.githubusercontent.com/NicolasGula/NicolasGula/master/public/images/photos/Designer.png
 coverImageAlt: Microsoft AD
@@ -156,4 +156,5 @@ With ```git checkout``` i change to the branch that have the credentials hardcod
 To finally, delete Carlos.
 ![](https://raw.githubusercontent.com/NicolasGula/NicolasGula/master/public/images/photos/id/l5/2024-05-10_13-46.png)
 
-I hope you it's helpful if you get stuck. 👨‍💻
+I hope you find it useful.👨‍💻
+If you have another type of solution or if i am mistaken about something, please let me know.

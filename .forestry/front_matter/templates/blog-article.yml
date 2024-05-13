@@ -95,11 +95,11 @@ fields:
   description: Tags for the post
 - name: author
   type: select
-  default: Nicolas Gula
+  default: nGbonzini
   config:
     required: true
     options:
-    - Nicolas Gula
+    - nGbonzini
     source:
       type: simple
       section: 

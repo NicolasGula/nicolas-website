@@ -56,7 +56,7 @@ const SocialLinks: React.FC<{ page?: string }> = ({ page }) => {
 const socialLinks = [
   {
     id: 1,
-    title: "Nicolas Gula's Github Profile",
+    title: "nGbonzini's Github Profile",
     link: "https://github.com/",
     svg: (
       <svg
@@ -75,8 +75,8 @@ const socialLinks = [
   },
   {
     id: 2,
-    title: "Nicolas Gula's LinkedIn Profile",
-    link: "https://www.linkedin.com/in/nicolasgula/",
+    title: "nGbonzini's LinkedIn Profile",
+    link: "https://www.linkedin.com/in/nGbonzini/",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -91,8 +91,8 @@ const socialLinks = [
   },
   {
     id: 3,
-    title: "Check Nicolas Gula on Dev.to",
-    link: "https://dev.to/nicolas_bonzini",
+    title: "Check nGbonzini on Twitter",
+    link: "https://twitter.com/ngbonzini",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -100,14 +100,14 @@ const socialLinks = [
         height="24"
         className="dark:fill-bglight hover:fill-marrsgreen dark:hover:fill-carrigreen"
       >
-        <path d="M7.826 10.083a.784.784 0 0 0-.468-.175h-.701v4.198h.701a.786.786 0 0 0 .469-.175c.155-.117.233-.292.233-.525v-2.798c.001-.233-.079-.408-.234-.525zM19.236 3H4.764C3.791 3 3.002 3.787 3 4.76v14.48c.002.973.791 1.76 1.764 1.76h14.473c.973 0 1.762-.787 1.764-1.76V4.76A1.765 1.765 0 0 0 19.236 3zM9.195 13.414c0 .755-.466 1.901-1.942 1.898H5.389V8.665h1.903c1.424 0 1.902 1.144 1.903 1.899v2.85zm4.045-3.562H11.1v1.544h1.309v1.188H11.1v1.543h2.142v1.188h-2.498a.813.813 0 0 1-.833-.792V9.497a.813.813 0 0 1 .792-.832h2.539l-.002 1.187zm4.165 4.632c-.531 1.235-1.481.99-1.906 0l-1.548-5.818h1.309l1.193 4.569 1.188-4.569h1.31l-1.546 5.818z"></path>
+       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/></svg>
       </svg>
     ),
   },
   {
     id: 4,
-    title: "Nicolas Gula's Profile on Medium",
-    link: "https://medium.com/@nicolasgulab",
+    title: "nGbonzini's Profile on Medium",
+    link: "https://medium.com/@ngbonzini",
     svg: (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="dark:fill-bglight hover:fill-marrsgreen dark:hover:fill-carrigreen"><g fill="none"><path d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M8 6a6 6 0 1 1 0 12A6 6 0 0 1 8 6m9 1c1.5 0 2.5 2.239 2.5 5s-1 5-2.5 5s-2.5-2.239-2.5-5s1-5 2.5-5m4 .5c.38 0 .712.827.88 2.246l.047.443l.019.235l.03.494l.01.259l.012.541L22 12l-.002.282l-.012.541l-.01.26l-.03.493l-.02.235l-.045.443c-.169 1.42-.5 2.246-.881 2.246c-.38 0-.712-.827-.88-2.246l-.047-.443a16.683 16.683 0 0 1-.019-.235l-.03-.494a20.863 20.863 0 0 1-.01-.259l-.012-.541v-.564l.012-.541l.01-.26l.03-.493l.02-.235l.045-.443c.169-1.42.5-2.246.881-2.246"/></g></svg>
     ),

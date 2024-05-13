@@ -12,7 +12,7 @@ sections:
   new_doc_ext: md
   templates:
   - blog-article
-upload_dir: NicolasGula
+upload_dir: nGbonzini
 public_path: https://res.cloudinary.com/noezectz/image/upload
 front_matter_path: ''
 use_front_matter_path: false

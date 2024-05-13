@@ -13,7 +13,7 @@ tags:
   - Kerberos
   - LDAP
   - Domain Controller
-author: Nicolas Gula
+author: nGbonzini
 coverImage: https://jumpcloud.com/wp-content/uploads/2016/07/AD1.png
 coverImageAlt: Microsoft AD
 coverImageWidth: "1200"
