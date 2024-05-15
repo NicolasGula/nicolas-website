@@ -3,7 +3,7 @@ title: Insecure Deserialization - Portswigger Labs
 description: Information Disclosure - Portswigger Labs
 excerpt:
   La serialización es el proceso de convertir datos complejos, como objetos, en un formato más simple que puede ser enviado o almacenado como bytes.
-datetime: 2024-05-11T18:33:07.000+00:00
+datetime: 2024-05-11T17:33:07.000+00:00
 tags:
   - Information Disclosure
   - Portswigger
@@ -95,4 +95,36 @@ Si el sitio web confía ciegamente en estos datos sin autenticarlos, podría per
 
 >Esta práctica de laboratorio utiliza un mecanismo de sesión basado en serialización y, como resultado, es vulnerable a la escalada de privilegios. Para resolver la práctica de laboratorio, edite el objeto serializado en la cookie de sesión para explotar esta vulnerabilidad y obtener privilegios administrativos. Luego, elimina el usuario. carlos. 
 
+Ingreso mis credenciales y preocedo a loguearme.
+![](https://raw.githubusercontent.com/NicolasGula/NicolasGula/master/public/images/photos/insecudese/l1/1.png)
+
+Al capturar la peticion con Burp y leer el valor de la cookie, noto que el valor de admin es 0.
+![](https://raw.githubusercontent.com/NicolasGula/NicolasGula/master/public/images/photos/insecudese/l1/2.png)
+![](https://raw.githubusercontent.com/NicolasGula/NicolasGula/master/public/images/photos/insecudese/l1/3.png)
+
+Cambio el valor por un 1, lo que deberia de interpretarse como un True.
+![](https://raw.githubusercontent.com/NicolasGula/NicolasGula/master/public/images/photos/insecudese/l1/4.png).
+
+Efectivamente, el cambio a 1 me da privilegios de administrador.
+![](https://raw.githubusercontent.com/NicolasGula/NicolasGula/master/public/images/photos/insecudese/l1/5.png)
+
  
+## Modificar tipos de datos
+
+La lógica de PHP es vulnerable a manipulaciones debido a su operador de comparación flexible (==), que convierte tipos de datos durante la comparación. Por ejemplo, 5 == "5" se evalúa como verdadero. Esto también ocurre con cadenas alfanuméricas que comienzan con un número, donde PHP convierte la cadena en un valor numérico basado en el número inicial. Por ejemplo, "5 of something" se trata como 5. Además, comparar una cadena con el número entero 0 puede llevar a resultados inesperados.
+
+La flexibilidad del operador de comparación en PHP puede conducir a fallas lógicas peligrosas, especialmente cuando se usa con datos controlables por el usuario. Por ejemplo, si un atacante modifica el atributo de contraseña de un objeto deserializado para contener el número entero 0, la comparación siempre devuelve verdadero si la contraseña no comienza con un número, lo que permite eludir la autenticación. 
+
+```
+$login = unserialize($_COOKIE)
+
+if ($login['password'] == $password) {
+// log in successfully
+}
+```
+
+Es crucial actualizar las etiquetas de tipo y los indicadores de longitud al modificar tipos de datos en objetos serializados para evitar daños en la deserialización.
+
+## Lab 2 - Modificacion de tipos de datos serializados
+
+>Esta práctica de laboratorio utiliza un mecanismo de sesión basado en serialización y, como resultado, es vulnerable a la omisión de autenticación. Para resolver la práctica de laboratorio, edite el objeto serializado en la cookie de sesión para acceder a la administratorcuenta. Luego, elimina el usuario. carlos.

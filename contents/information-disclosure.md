@@ -26,7 +26,7 @@ As preparation for the eWPTX im going to work through the Portswigger labs. In t
 
 ## Whats is Information Disclosure?
 
-Information disclosure, also known as information leakage, is when a website unintentionally reveals sensitive information to its users. Depending on the context, websites may leak all kinds of information to a potential attacker:
+Information disclosure, also known as information leakage, occurs when a website unintentionally reveals sensitive information to its users. This can expose data to potential attackers, including:
 - Data about other users, such as usernames or financial information
 - Sensitive commercial or business data
 - Technical details about the website and its infrastructure
@@ -34,23 +34,23 @@ Information disclosure, also known as information leakage, is when a website uni
 ## Basic examples of information disclosure
 
 
-- Revealing the names of hidden directories, their structure, and their contents via a robots.txt file or directory listing
-- Providing access to source code files via temporary backups
-- Explicitly mentioning database table or column names in error messages
-- Unnecessarily exposing highly sensitive information, such as credit card details
-- Hard-coding API keys, IP addresses, database credentials, and so on in the source code
-- Hinting at the existence or absence of resources, usernames, and so on via subtle differences in application behavior
+- Hidden Directories: Revealing names, structure, and contents of hidden directories via `robots.txt` files or directory listings.
+- Source Code Exposure: Providing access to source code files through temporary backups.
+- Error Messages: Explicitly mentioning database table or column names in error messages.
+- Sensitive Information: Unnecessarily exposing highly sensitive information, such as credit card details.
+- Hard-Coding Secrets: Hard-coding API keys, IP addresses, and database credentials in the source code.
+- Application Behavior: Hinting at the existence or absence of resources or usernames through subtle differences in application behavior.
 
 ## How to find and exploit information disclosure vulnerabilities ?
 
-- Fuzzing
-- Using Burp Scanner
-- Using Burp's engagement tools
-- Engineering informative responses
+- Fuzzing: Sending random or unexpected inputs to the application to uncover how it handles different types of data.
+- Using Burp Scanner: Automated tool to scan for vulnerabilities, including information disclosure.
+- Using Burp's Engagement Tools: Tools within Burp Suite that help identify and exploit information disclosure vulnerabilities.
+- Engineering Informative Responses: Crafting inputs that provoke error messages or other responses revealing useful information.
 
 ## Error messages
 
-The content of error messages can reveal information about what input or data type is expected from a given parameter. This can help you to narrow down your attack by identifying exploitable parameters.
+The content of error messages can be particularly revealing. They can indicate what type of input or data is expected, helping you identify exploitable parameters.
 
 ## Lab 1 - Information Disclosure in error messages
 
@@ -67,12 +67,12 @@ And yes!
 
 ## Debugging Data
 
-For debugging purposes, many websites generate custom error messages and logs that contain large amounts of information about the application's behavior. 
+Websites often generate custom error messages and logs for debugging purposes. These can unintentionally reveal a lot of information about the application's behavior, such as:
 
-- Values for key session variables that can be manipulated via user input
-- Hostnames and credentials for back-end components
-- File and directory names on the server
-- Keys used to encrypt data transmitted via the client
+- Session Variables: Values that can be manipulated via user input.
+- Back-End Credentials: Hostnames and credentials for back-end components.
+- File and Directory Names: Specific file and directory names on the server.
+- Encryption Keys: Keys used to encrypt data transmitted via the client.
 
 ## Lab 2 - Information Disclosure on debug page
 
@@ -85,17 +85,14 @@ Every time when we do a penetration test in a web application is indispensable r
 
 ## User account pages
 
-By their very nature, a user's profile or account page usually contains sensitive information.
-Some websites contain logic flaws that potentially allow an attacker to leverage these pages in order to view other users' data. 
-
+User account or profile pages typically contain sensitive information. Some websites have logic flaws that allow attackers to exploit these pages to view data belonging to other users. Ensuring proper access controls and validation is crucial to prevent unauthorized access to personal information.
 For example:
-```
-GET /user/personal-info?user=carlos
-```
 
-## Source code disclosure via backup files
+```GET /user/personal-info?user=carlos```
 
-Obtaining source code access makes it much easier for an attacker to understand the application's behavior and construct high-severity attacks. Sensitive data is sometimes even hard-coded within the source code.
+## Source Code Disclosure via Backup Files
+
+When source code is accessible through backup files, it makes it easier for attackers to understand the application's behavior and launch severe attacks. Sometimes, sensitive data like API keys and credentials are hard-coded within the source code, increasing the risk. To prevent this, ensure that backup files are not publicly accessible.
 
 ## Lab 3 - Source code disclosure via backup files
 
@@ -106,7 +103,7 @@ Obtaining source code access makes it much easier for an attacker to understand 
 
 ## Information disclosure due to insecure configuration
 
-Websites are sometimes vulnerable as a result of improper configuration. This is especially common due to the widespread use of third-party technologies, whose vast array of configuration options are not necessarily well-understood by those implementing them. 
+Websites can be vulnerable if they are improperly configured. This often happens with third-party technologies, where the wide range of configuration options may not be fully understood by those setting them up. Ensuring proper configuration is essential to prevent unintended information disclosure and protect sensitive data.
 
 ## Lab 4 - Authentication bypass via information disclosure
 
