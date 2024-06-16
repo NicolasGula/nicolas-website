@@ -10,7 +10,7 @@ tags:
   - The OSI Model
   - TCP/IP
   - PDU
-featured: true
+featured: false
 category: What is ?
 author: nGbonzini
 type: article

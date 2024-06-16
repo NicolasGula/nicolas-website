@@ -8,7 +8,7 @@ tags:
   - Command Injection
   - Portswigger
   - Labs
-featured: true
+featured: false
 category: Tutorial
 author: nGbonzini
 type: article

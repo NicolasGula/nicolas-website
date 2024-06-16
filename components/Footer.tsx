@@ -65,7 +65,7 @@ const socialLinks = [
   {
     id: 2,
     title: "ngbonzini's LinkedIn Profile",
-    link: "https://www.linkedin.com/in/nGbonzini/",
+    link: "https://www.linkedin.com/in/nicolasgula/",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"

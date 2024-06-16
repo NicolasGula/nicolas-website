@@ -192,26 +192,32 @@ const AboutSection: React.FC = () => {
 const educationInfo = [
   {
     id: 1,
-    title: "eWPT (Web Penetration Tester)",
-    subTitle: "January 2024",
-    list: ["The exam is a skills-based test that requires candidates to perform a real-world web app pentesting simulation.","Information Gathering & Reconnaissance","Web Application Vulnerability Assessment","Manual exploitation"
+    title: "eWPTX (Web Application Penetration Tester eXtreme)",
+    subTitle: "June 2024",
+    list: [
     ],
   },
   {
     id: 2,
-    title: "eJPT (Junior Penetration Tester)",
-    subTitle: "September 2023",
+    title: "eWPT (Web Penetration Tester)",
+    subTitle: "January 2024",
     list: [
-      "Designed to test you on every phase of the penetration life cycle.", "Assessment methodologies", "Host and network auditing", "Host and network penetration testing", 'Web application penetration testing',
     ],
   },
   {
     id: 3,
+    title: "eJPT (Junior Penetration Tester)",
+    subTitle: "September 2023",
+    list: [
+      
+    ],
+  },
+  {
+    id: 4,
     title: "CC of ISC2 (Certified Cybersecurity)",
     subTitle: "June 2023",
     list: [
-      "Designed to kickstart newcomers' careers in cybersecurity.",
-      "It validates understanding of fundamental security principles.",
+      
     ],
   },
   
